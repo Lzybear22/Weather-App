@@ -1,0 +1,140 @@
+/* General body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #87cefa 0%, #f0f8ff 100%);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px;
+    color: #333;
+  }
+  
+  /* Form container */
+  .inputweather {
+    margin-bottom: 40px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Input box */
+  .inputcity {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 1.8rem;
+    border: 2px solid #0077cc;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 119, 204, 0.3);
+    transition: border-color 0.3s ease;
+  }
+  
+  .inputcity:focus {
+    outline: none;
+    border-color: #005fa3;
+    box-shadow: 0 0 12px rgba(0, 95, 163, 0.6);
+  }
+  
+  /* Submit button */
+  button[type="submit"] {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 119, 204, 0.3);
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #005fa3;
+  }
+  
+  /* Weather card container */
+  .card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 60px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    min-width: 320px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #004466;
+    transition: all 0.4s ease;
+  }
+  
+  /* City name */
+  .showcity {
+    font-size: 3.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #003355;
+    letter-spacing: 1px;
+  }
+  
+  /* Temperature */
+  .showtemp {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  
+  /* Humidity */
+  .showhumidity {
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: #005577;
+  }
+  
+  /* Weather description */
+  .showdesc {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #0077cc;
+    margin-bottom: 0;
+  }
+  
+  /* Error styling */
+  .showerror {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #cc0000;
+    text-align: center;
+    padding: 20px 10px;
+    border: 2px solid #cc0000;
+    border-radius: 12px;
+    background: #ffe6e6;
+    max-width: 400px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .inputcity {
+      font-size: 1.5rem;
+    }
+  
+    button[type="submit"] {
+      font-size: 1.5rem;
+    }
+  
+    .showcity {
+      font-size: 2.8rem;
+    }
+  
+    .showtemp {
+      font-size: 2.5rem;
+    }
+  }
+  
