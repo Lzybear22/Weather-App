@@ -1,4 +1,4 @@
-const apiKey = "16dccf2cead0765a8973216039e30661";
+const apiKey = "16dccf2cead0765a8973216039e30661"; // Key from weather API
 
 // Select DOM elements
 const inputweather = document.querySelector(".inputweather");
@@ -7,7 +7,7 @@ const card = document.querySelector(".card");
 const tempswitch = document.getElementById("tempswitch")
 const tempoption = document.querySelector(".option-temp");
 const humidityoption = document.querySelector(".option-humidity");
-const descoption = document.querySelector(".option-desc");
+const descoption = document.querySelector(".option-desc"); // Grabs elements from html 
 
 let usecelsius = false;
 
@@ -41,7 +41,7 @@ inputweather.addEventListener("submit", async event => {
 
 // Fetch weather data from API
 async function getWeatherData(city) {
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`; // City gets the city from user input
   const response = await fetch(apiUrl);
 
   if (!response.ok) {
@@ -125,7 +125,7 @@ function displayWeatherInfo(data) {
   card.appendChild(showcity);
   card.appendChild(showtemp);
   card.appendChild(showhumidity);
-  card.appendChild(showdesc);
+  card.appendChild(showdesc); 
 
 // Display error messages on the card
 function displayError(message) {

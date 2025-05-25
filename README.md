@@ -4,9 +4,7 @@ This is a weather applictaion. It takes all the information provided by openweat
 
 I want to be a better front end developer and learn how to make more complex websites and web pages. I have made a few static websites but JavaScript makes websites way more fun to make and use. 
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+Software Demo Video: https://youtu.be/TNsTqq57FQg
 
 # Development Environment
 
