@@ -4,6 +4,14 @@ const apiKey = "16dccf2cead0765a8973216039e30661";
 const inputweather = document.querySelector(".inputweather");
 const inputcity = document.querySelector(".inputcity");
 const card = document.querySelector(".card");
+const tempswitch = document.getElementById("tempswitch")
+
+let usecelsius = false;
+
+// Toggle for C/F
+tempswitch.addEventListener("change", () => {
+    usecelsius = tempswitch.checked;
+  });
 
 // Event listener for form submit
 inputweather.addEventListener("submit", async event => {
@@ -17,7 +25,6 @@ inputweather.addEventListener("submit", async event => {
     return; // stop here if invalid input
   }
 
-  if (city) {
     try {
       // Fetch weather data and display it
       const weatherData = await getWeatherData(city);
@@ -27,9 +34,6 @@ inputweather.addEventListener("submit", async event => {
       console.error(error);
       displayError(error.message || "An error occurred");
     }
-  } else {
-    displayError("Please enter a city");
-  }
 });
 
 // Fetch weather data from API
@@ -63,11 +67,17 @@ function displayWeatherInfo(data) {
   const showdesc = document.createElement("p");
 
   // Convert temp from Kelvin to Fahrenheit
-  const tempF = ((temp - 273.15) * (9 / 5) + 32).toFixed(1);
+  let temperature;
+  if(usecelsius) {
+    temperature = `${(temp - 273.15).toFixed(1)}°C`;
+  }
+  else {
+    temperature = `${((temp - 273.15) * (9 / 5) + 32).toFixed(1)}°F`;
+  }
+  showtemp.textContent = temperature;
 
   // Set text content
   showcity.textContent = city;
-  showtemp.textContent = `${tempF}°F`;
   showhumidity.textContent = `Humidity: ${humidity}%`;
   showdesc.textContent = description;
 
@@ -95,3 +105,8 @@ function displayError(message) {
 
   card.appendChild(showerror);
 }
+
+// Validate city name (only letters and spaces allowed)
+function isValidCity(city) {
+    return /^[a-zA-Z\s]{2,}$/.test(city);
+  }
