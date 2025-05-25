@@ -11,6 +11,12 @@ inputweather.addEventListener("submit", async event => {
 
   const city = inputcity.value.trim(); // Trim whitespace from input
 
+  // Check if city name is valid
+  if (!isValidCity(city)) {
+    displayError("Please enter a valid city name.");
+    return; // stop here if invalid input
+  }
+
   if (city) {
     try {
       // Fetch weather data and display it
