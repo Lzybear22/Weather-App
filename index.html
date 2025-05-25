@@ -10,11 +10,21 @@
     <form class="inputweather">
         <input type="text" class="inputcity" placeholder="Enter City">
         <button type="submit">Show Weather</button>
-    </form>
-    <label>
-        <input type="checkbox" id="tempswitch" />
-        Show in Celsius
-    </label> 
+    
+        <label>
+            <input type="checkbox" class="option-temp" checked /> Temperature
+        </label>
+        <label>
+            <input type="checkbox" class="option-humidity" checked /> Humidity
+        </label>
+        <label>
+            <input type="checkbox" class="option-desc" checked /> Description
+        </label>
+        <label>
+            <input type="checkbox" id="tempswitch" />
+            Show in Celsius
+        </label> 
+    </form> 
     <div class="card" style="display: none">   
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>

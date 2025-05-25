@@ -5,6 +5,9 @@ const inputweather = document.querySelector(".inputweather");
 const inputcity = document.querySelector(".inputcity");
 const card = document.querySelector(".card");
 const tempswitch = document.getElementById("tempswitch")
+const tempoption = document.querySelector(".option-temp");
+const humidityoption = document.querySelector(".option-humidity");
+const descoption = document.querySelector(".option-desc");
 
 let usecelsius = false;
 
@@ -62,9 +65,40 @@ function displayWeatherInfo(data) {
 
   // Create elements to display data
   const showcity = document.createElement("h1");
-  const showtemp = document.createElement("p");
-  const showhumidity = document.createElement("p");
-  const showdesc = document.createElement("p");
+  showcity.textContent = city;
+  showcity.classList.add("showcity");
+  card.appendChild(showcity);
+
+  // Show temperature only if checked
+  if (tempoption.checked) {
+    const showtemp = document.createElement("p");
+    let temperature;
+    if(usecelsius) {
+      temperature = `${(temp - 273.15).toFixed(1)}°C`;
+    } else {
+      temperature = `${((temp - 273.15) * (9 / 5) + 32).toFixed(1)}°F`;
+    }
+    showtemp.textContent = `Temperature: ${temperature}`;
+    showtemp.classList.add("showtemp");
+    card.appendChild(showtemp);
+  }
+
+  // Show humidity only if checked
+  if (humidityoption.checked) {
+    const showhumidity = document.createElement("p");
+    showhumidity.textContent = `Humidity: ${humidity}%`;
+    showhumidity.classList.add("showhumidity");
+    card.appendChild(showhumidity);
+  }
+
+  // Show description only if checked
+  if (descoption.checked) {
+    const showdesc = document.createElement("p");
+    showdesc.textContent = description;
+    showdesc.classList.add("showdesc");
+    card.appendChild(showdesc);
+  }
+}
 
   // Convert temp from Kelvin to Fahrenheit
   let temperature;
@@ -92,7 +126,6 @@ function displayWeatherInfo(data) {
   card.appendChild(showtemp);
   card.appendChild(showhumidity);
   card.appendChild(showdesc);
-}
 
 // Display error messages on the card
 function displayError(message) {
