@@ -15,7 +15,7 @@ I used JavaScript to show the city users typed in. HTML to start and build the w
 # Useful Websites
 
 - All the websites and links in my WDD 130 class 
-- OpenWeather APIhttps://openweathermap.org/
+- OpenWeather API https://openweathermap.org/
 - JavaScript Tutorial https://javascript.info/
 
 # Future Work
